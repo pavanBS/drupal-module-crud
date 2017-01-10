@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains mydata.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mydata_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mydata module.
+    case 'help.page.mydata':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This dispaly information what you enter your application.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function mydata_theme() {
+  // We use a template file to allow for translation of blocks of content.
+  // Therefore we need to add this content at the theming layer.
+  return [
+    'mydata_description' => [
+      'template' => 'description',
+      'variables' => [],
+    ],
+  ];
+}

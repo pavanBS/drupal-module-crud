@@ -1,0 +1,36 @@
+
+mydata.mydata_controller_display:
+  path: '/mydata'
+  defaults:
+    _controller: '\Drupal\mydata\Controller\MydataController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+mydata.mydata_form:
+  path: '/mydata/form/mydata'
+  defaults:
+    _form: '\Drupal\mydata\Form\MydataForm'
+    _title: 'MydataForm'
+  requirements:
+    _access: 'TRUE'
+  
+
+mydata.display_table_controller_display:
+  path: '/mydata/hello/table'
+  defaults:
+    _controller: '\Drupal\mydata\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+
+
+mydata.delete_form:
+  path: '/mydata/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\mydata\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+  
